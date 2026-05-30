@@ -1,0 +1,52 @@
+[
+  {
+    "id": "aws-educate-cloud-foundations",
+    "title": "AWS Educate",
+    "provider": "AWS Educate",
+    "url": "https://aws.amazon.com/education/awseducate/",
+    "track": "Cloud foundations",
+    "level": "beginner",
+    "cost": "free",
+    "notes": "Start here for cloud basics: accounts, storage, compute, networking, databases, and operations."
+  },
+  {
+    "id": "aws-skill-builder-free",
+    "title": "AWS Skill Builder",
+    "provider": "AWS Skill Builder",
+    "url": "https://aws.amazon.com/training/digital/",
+    "track": "Certification prep",
+    "level": "beginner",
+    "cost": "free",
+    "notes": "Free AWS courses and exam prep for students who want a study route."
+  },
+  {
+    "id": "aws-builder-center",
+    "title": "AWS Builder Center",
+    "provider": "AWS Builder Center",
+    "url": "https://builder.aws.com/",
+    "track": "Builder community",
+    "level": "beginner",
+    "cost": "free",
+    "notes": "Builder profiles, AWS learning links, and Student Builder Group context."
+  },
+  {
+    "id": "aws-repost",
+    "title": "AWS re:Post",
+    "provider": "AWS",
+    "url": "https://repost.aws/",
+    "track": "Technical unblockers",
+    "level": "intermediate",
+    "cost": "free",
+    "notes": "AWS Q&A for service errors, setup problems, and architecture questions."
+  },
+  {
+    "id": "well-architected-framework",
+    "title": "AWS Well-Architected Framework",
+    "provider": "AWS",
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/definitions.html",
+    "track": "Architecture and security",
+    "level": "intermediate",
+    "cost": "free",
+    "notes": "AWS reference for reliability, security, performance, cost, and operations terms."
+  }
+]

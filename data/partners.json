@@ -1,0 +1,22 @@
+[
+  {
+    "id": "fast-nuces-peshawar",
+    "name": "FAST NUCES Peshawar",
+    "category": "campus",
+    "description": "FAST Peshawar hosts campus sessions and student learning activity.",
+    "websiteUrl": "https://pwr.nu.edu.pk/",
+    "logoUrl": null,
+    "permissionStatus": "pending",
+    "relatedEventIds": []
+  },
+  {
+    "id": "aws-student-builder-groups",
+    "name": "AWS Student Builder Groups",
+    "category": "community",
+    "description": "AWS program for student-led cloud groups.",
+    "websiteUrl": "https://builder.aws.com/connect/community/cloud-clubs",
+    "logoUrl": null,
+    "permissionStatus": "approved",
+    "relatedEventIds": []
+  }
+]
