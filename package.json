@@ -1,0 +1,18 @@
+{
+  "name": "awssbgfastpwr.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static website for AWS Student Builder Group FAST Peshawar.",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "dev": "node scripts/serve.mjs",
+    "lint": "node scripts/check-site.mjs",
+    "sync:events": "node scripts/sync-meetup-events.mjs",
+    "test": "npm run lint",
+    "typecheck": "node --check src/render.mjs && node --check scripts/build-site.mjs && node --check scripts/check-site.mjs && node --check scripts/sync-meetup-events.mjs && node --check scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

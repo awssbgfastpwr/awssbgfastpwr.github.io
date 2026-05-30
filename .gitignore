@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Build output
+dist/
+build/
+out/
+.cache/
+.tmp/
+.temp/
+
+# Test and coverage output
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Local browser/tool state
+.playwright-mcp/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Certificates and private keys
+*.pem
+*.key
+*.crt
+
+# Local source and planning material
+/Assets/
+/docs/
+
+# Visual QA artifacts generated at the repo root
+/events-logo-removed.png
+/homepage-*.png
+/team-drum-*.png
+/team-page-preview.png
+
+# Local team photo drops; optimized WebP files are the production assets.
+public/team/*.jpg
+public/team/*.jpeg
+public/team/*.png

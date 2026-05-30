@@ -1,0 +1,78 @@
+[
+  {
+    "id": "community-website",
+    "slug": "community-website",
+    "name": "Community Website",
+    "problem": "Students, speakers, and partners need one place for event dates, learning tracks, projects, contacts, and certificate checks.",
+    "summary": "This site publishes the group calendar, study routes, project list, team pages, contact form, and verify page.",
+    "status": "active",
+    "difficulty": "intermediate",
+    "awsServices": [
+      "AWS Educate",
+      "AWS Skill Builder"
+    ],
+    "techStack": [
+      "Community website",
+      "Event listings",
+      "Learning paths",
+      "Contact routing",
+      "Certificate checks"
+    ],
+    "contributors": [
+      "Rayyan Shaheer"
+    ],
+    "mentor": "Rayyan Shaheer",
+    "repoUrl": "https://github.com/awssbgfastpwr/awssbgfastpwr.github.io",
+    "demoUrl": "https://awssbgfastpwr.github.io",
+    "imageUrl": null,
+    "nextContribution": "Add event recaps, publish photos, and keep page copy current."
+  },
+  {
+    "id": "certificate-verification-boundary",
+    "slug": "certificate-verification-boundary",
+    "name": "Certificate Verification Boundary",
+    "problem": "Certificate recipients need a public page that accepts a QR code or short code.",
+    "summary": "The verify page returns valid, invalid, revoked, loading, and help states.",
+    "status": "active",
+    "difficulty": "advanced",
+    "awsServices": [],
+    "techStack": [
+      "Certificate lookup",
+      "QR code flow",
+      "Support routing"
+    ],
+    "contributors": [
+      "Rayyan Shaheer"
+    ],
+    "mentor": "Rayyan Shaheer",
+    "repoUrl": null,
+    "demoUrl": "https://awssbgfastpwr.github.io/verify/",
+    "imageUrl": null,
+    "nextContribution": "Test valid, invalid, revoked, missing-code, and certificate-help flows before public certificate batches are issued."
+  },
+  {
+    "id": "workshop-lab-templates",
+    "slug": "workshop-lab-templates",
+    "name": "Workshop Lab Templates",
+    "problem": "Beginner sessions need repeatable lab material that students can finish during a workshop and revisit afterward.",
+    "summary": "Small labs for cloud foundations, web hosting, serverless services, containers, and security basics.",
+    "status": "idea",
+    "difficulty": "beginner",
+    "awsServices": [
+      "Amazon S3",
+      "AWS Lambda",
+      "Amazon CloudWatch"
+    ],
+    "techStack": [
+      "Markdown",
+      "GitHub",
+      "AWS Free Tier-safe examples"
+    ],
+    "contributors": [],
+    "mentor": null,
+    "repoUrl": null,
+    "demoUrl": null,
+    "imageUrl": null,
+    "nextContribution": "Draft the first lab with cost-safety notes and a cleanup checklist."
+  }
+]

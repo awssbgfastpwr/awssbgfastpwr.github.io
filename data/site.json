@@ -1,0 +1,31 @@
+{
+  "siteName": "AWS Student Builder Group FAST Peshawar",
+  "formerName": "AWS Cloud Club FAST Peshawar",
+  "description": "Students at FAST NUCES Peshawar study AWS, AI, and cloud engineering together.",
+  "mission": "AWS Student Builder Group FAST Peshawar runs workshops, talks, project sprints, and peer study for students learning cloud, AI, DevOps, and security.",
+  "siteUrl": "https://awssbgfastpwr.github.io",
+  "meetupUrl": "https://www.meetup.com/aws-sbg-at-nuces/",
+  "linkedinUrl": "https://pk.linkedin.com/company/awsccfastpwr",
+  "githubUrl": "https://github.com/awssbgfastpwr",
+  "formSubmitEndpoint": "https://formsubmit.co/awscloudclub.nucespwr@gmail.com",
+  "contactSuccessUrl": "https://awssbgfastpwr.github.io/contact/thanks/",
+  "certificateVerifyApi": "https://certificate-platform.pages.dev/api/verify",
+  "lastUpdated": "2026-05-31",
+  "publicStats": [
+    {
+      "label": "Meetup members",
+      "value": "1,114",
+      "source": "Public Meetup page, checked 2026-05-28"
+    },
+    {
+      "label": "Past events on Meetup",
+      "value": "8",
+      "source": "Public Meetup page, checked 2026-05-28"
+    },
+    {
+      "label": "Primary campus",
+      "value": "FAST Peshawar",
+      "source": "Group identity"
+    }
+  ]
+}

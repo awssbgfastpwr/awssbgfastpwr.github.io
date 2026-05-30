@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "student-builder-group-identity",
+    "title": "AWS Student Builder Group FAST Peshawar identity",
+    "date": "2026-05-28",
+    "author": "AWS Student Builder Group FAST Peshawar",
+    "category": "announcement",
+    "summary": "FAST Peshawar now publishes events and projects under the AWS Student Builder Group name.",
+    "tags": [
+      "community",
+      "rebrand"
+    ],
+    "body": [
+      "FAST Peshawar now uses the AWS Student Builder Group name. The group began as AWS Cloud Club FAST Peshawar.",
+      "Students still run the sessions. The calendar centers on workshops, talks, project work, and beginner access to AWS and AI topics.",
+      "Use Meetup to register for events. Follow LinkedIn for announcements and recaps. Use GitHub for project work."
+    ]
+  },
+  {
+    "slug": "learning-tracks-launch",
+    "title": "Learning tracks for cloud, AI, DevOps, security, and data",
+    "date": "2026-05-28",
+    "author": "AWS Student Builder Group FAST Peshawar",
+    "category": "learning paths",
+    "summary": "Students can start with free AWS links before they join a workshop or project sprint.",
+    "tags": [
+      "learning",
+      "aws"
+    ],
+    "body": [
+      "Start with cloud foundations, AI, DevOps, security, data, or certification prep.",
+      "Each track links to free AWS material and points to a workshop topic the group can run on campus or online.",
+      "Pick one topic, attend a session, then build a small demo you can explain."
+    ]
+  },
+  {
+    "slug": "open-project-ideas",
+    "title": "Open project ideas for student builders",
+    "date": "2026-05-28",
+    "author": "AWS Student Builder Group FAST Peshawar",
+    "category": "student projects",
+    "summary": "Students can pick from maintained project ideas instead of starting from a blank repo.",
+    "tags": [
+      "projects",
+      "open-source"
+    ],
+    "body": [
+      "Good student projects solve one campus or learning problem, list a maintainer, include a README, and keep cloud costs visible.",
+      "The current list starts with this website, workshop lab templates, and certificate verification.",
+      "New ideas should include a demo goal, cleanup notes, and one first issue for beginners."
+    ]
+  }
+]
