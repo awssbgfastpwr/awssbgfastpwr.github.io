@@ -39,6 +39,22 @@ function valueFrom(data, keys) {
   return null;
 }
 
+function certificateFrom(data) {
+  return data?.certificate && typeof data.certificate === 'object' ? data.certificate : data;
+}
+
+function formatCertificateType(value) {
+  const labels = {
+    participation: 'Participation Certificate',
+    speaking: 'Speaking Certificate',
+    volunteering: 'Volunteering Certificate',
+    leadership: 'Leadership Certificate',
+    organization: 'Organization Certificate'
+  };
+  const normalized = String(value || '').trim().toLowerCase();
+  return labels[normalized] || value;
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -50,17 +66,19 @@ function escapeHtml(value) {
 
 function renderApiData(data) {
   const status = String(valueFrom(data, ['status', 'state']) || '').toLowerCase();
+  const certificate = certificateFrom(data);
   const isRevoked = Boolean(data?.revoked) || status === 'revoked';
   const isValid = Boolean(data?.valid) || ['valid', 'active', 'issued'].includes(status);
-  const isInvalid = status === 'invalid' || data?.valid === false;
+  const isInvalid = ['invalid', 'not_found', 'missing_code'].includes(status) || data?.valid === false;
+  const certificateType = valueFrom(certificate, ['certificateType', 'certificate_type', 'role', 'type']);
 
   const rows = [
     ['Status', escapeHtml(valueFrom(data, ['status', 'state']) || (isValid ? 'Valid' : isRevoked ? 'Revoked' : 'Unknown'))],
-    ['Certificate', escapeHtml(valueFrom(data, ['certificateId', 'certificate_id', 'id', 'code']) || 'Available')],
-    ['Recipient', escapeHtml(valueFrom(data, ['recipientName', 'recipient_name', 'name']) || 'Not available')],
-    ['Event', escapeHtml(valueFrom(data, ['eventName', 'event_name', 'event', 'title']) || 'Not available')],
-    ['Role', escapeHtml(valueFrom(data, ['role', 'type']) || 'Not available')],
-    ['Issued', escapeHtml(valueFrom(data, ['issuedAt', 'issued_at', 'date']) || 'Not available')]
+    ['Certificate', escapeHtml(valueFrom(certificate, ['certId', 'certificateId', 'certificate_id', 'id', 'code']) || 'Available')],
+    ['Recipient', escapeHtml(valueFrom(certificate, ['recipientName', 'recipient_name', 'name']) || 'Not available')],
+    ['Event', escapeHtml(valueFrom(certificate, ['eventName', 'event_name', 'event', 'title']) || 'Not available')],
+    ['Role', escapeHtml(formatCertificateType(certificateType) || 'Not available')],
+    ['Issued', escapeHtml(valueFrom(certificate, ['issuedAt', 'issued_at', 'date']) || 'Not available')]
   ];
 
   if (isRevoked) {

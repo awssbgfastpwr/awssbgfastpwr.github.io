@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import vm from 'node:vm';
 
 const root = process.cwd();
 const requiredFiles = [
@@ -68,6 +69,52 @@ async function validateImageUrl(value, label) {
   validateUrl(imageUrl, label);
 }
 
+async function renderVerifyFixture(payload) {
+  const script = await fs.readFile(path.join(root, 'public/scripts/verify.js'), 'utf8');
+  const result = {
+    className: '',
+    dataset: { api: 'https://certificate-platform.pages.dev/api/verify' },
+    innerHTML: '',
+    setAttribute() {}
+  };
+  const context = vm.createContext({
+    document: {
+      querySelector(selector) {
+        return selector === '[data-verify-result]' ? result : null;
+      }
+    },
+    __payload: payload
+  });
+
+  vm.runInContext(script, context);
+  vm.runInContext('renderApiData(__payload)', context);
+  return result;
+}
+
+async function validateVerifyRenderer() {
+  const valid = await renderVerifyFixture({
+    status: 'valid',
+    certificate: {
+      certId: 'CERT-EXAMPLE-001',
+      recipientName: 'Example Recipient',
+      certificateType: 'participation',
+      eventName: 'Example Event',
+      issuedAt: '2026-01-02'
+    },
+    verifiedAt: '2026-01-01T00:00:00.000Z'
+  });
+  assert(valid.className === 'verify-result valid', 'Verify renderer must mark valid API responses as valid');
+  assert(valid.innerHTML.includes('CERT-EXAMPLE-001'), 'Verify renderer must show nested certificate IDs');
+  assert(valid.innerHTML.includes('Example Recipient'), 'Verify renderer must show nested recipient names');
+  assert(valid.innerHTML.includes('Example Event'), 'Verify renderer must show nested event names');
+  assert(valid.innerHTML.includes('Participation Certificate'), 'Verify renderer must show nested certificate types');
+  assert(!valid.innerHTML.includes('Not available'), 'Verify renderer must not drop fields from nested API certificates');
+
+  const notFound = await renderVerifyFixture({ status: 'not_found', verifiedAt: '2026-01-01T00:00:00.000Z' });
+  assert(notFound.className === 'verify-result invalid', 'Verify renderer must treat not_found API responses as not found');
+  assert(notFound.innerHTML.includes('Certificate not found'), 'Verify renderer must show not-found copy for not_found responses');
+}
+
 async function main() {
   for (const file of requiredFiles) {
     await fs.access(path.join(root, file));
@@ -125,6 +172,8 @@ async function main() {
   const publicTextFiles = await fs.readdir(path.join(root, 'data'));
   const text = await Promise.all(publicTextFiles.map((file) => fs.readFile(path.join(root, 'data', file), 'utf8')));
   assert(!/BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY/.test(text.join('\n')), 'Private key material detected in public data');
+
+  await validateVerifyRenderer();
 
   console.log('Static site source checks passed.');
 }
