@@ -16,6 +16,10 @@ Thanks for helping improve the AWS Student Builder Group FAST Peshawar website. 
 2. For larger changes, open an issue first and describe the proposed change.
 3. Keep pull requests focused. One fix or feature per PR is easiest to review.
 
+## Branch Rules
+
+The `main` branch is protected. Do not push directly to `main`, including maintainers and admins. Create a branch, open a pull request, wait for checks, and merge through GitHub.
+
 ## Local Setup
 
 Use Node.js 20 or newer.
