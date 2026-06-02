@@ -210,6 +210,7 @@ export function renderPage({ site, title, description, path, body, scripts = [],
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="${escapeHtml(robots)}">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="google-site-verification" content="m9OS5L8LZUb7oitebJcV8OlfysW_uoV3b1BR-6RtY8Q">
   <meta http-equiv="Content-Security-Policy" content="${escapeHtml(csp)}">
   <link rel="canonical" href="${canonical}">
   <meta property="og:type" content="website">
