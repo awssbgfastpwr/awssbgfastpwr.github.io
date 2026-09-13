@@ -55,6 +55,12 @@ sidesteps the problem entirely without needing regular pushes to this repo.
 - Requires a GitHub fine-grained PAT (Actions: Read and write, scoped to
   this repo only) stored as a Cloudflare Worker secret — not visible in any
   repo, not committed anywhere
+- **PAT expires ~2027-09-13** (created 2026-09-13 with a 366-day expiration).
+  Fine-grained tokens can't be set to never expire, and there's no warning
+  before it lapses — if the daily sync silently stops again after that date,
+  this is the first thing to check. Create a replacement PAT with the same
+  settings (see `events-sync-trigger/README.md`) and re-run
+  `wrangler secret put GITHUB_TOKEN` before the old one expires
 
 If the Worker itself needs to be redeployed or its token rotated, see
 `events-sync-trigger/README.md`.
