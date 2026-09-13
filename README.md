@@ -75,7 +75,7 @@ Use `.env.example` as the reference for public configuration. The MVP should not
 
 ## Deployment
 
-GitHub Pages deployment is handled by `.github/workflows/deploy.yml` on pushes to `main`, scheduled daily event syncs, and manual workflow runs.
+GitHub Pages deployment is handled by `.github/workflows/deploy.yml` on pushes to `main`, scheduled daily event syncs, and manual workflow runs. The daily sync is also triggered independently by an external Cloudflare Worker to survive GitHub's automatic disabling of scheduled workflows after 60 days of repo inactivity — see [MAINTENANCE.md](MAINTENANCE.md) if the Events page ever looks stale.
 
 ## License
 
