@@ -38,7 +38,7 @@ once a day. GitHub's 60-day auto-disable only affects the `schedule:`
 trigger — manual/API dispatches keep working on a disabled workflow, so this
 sidesteps the problem entirely without needing regular pushes to this repo.
 
-- Worker source: sibling project `events-sync-trigger/` (see its `README.md`)
+- Worker source: [awssbgfastpwr/events-sync-trigger](https://github.com/awssbgfastpwr/events-sync-trigger) (see its `README.md`)
 - Deployed under the **"AWS Student Builder Group FAST Peshawar"** Cloudflare
   account (Account ID `ac02045514040243dd52c1b780575b2b`) at
   `https://events-sync-trigger.awscloudclub-nucespwr.workers.dev`. This is
